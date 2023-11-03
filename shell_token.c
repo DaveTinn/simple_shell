@@ -1,4 +1,5 @@
 #include "simpleshell.h"
+#include <stdio.h>
 /**
  * main - function to check the code
  *
@@ -6,11 +7,10 @@
  */
 int main(void)
 {
-	char *token_command;
-	char *dlim = " ,";
+	char token_command[] = "This is a token in Simple Shell Project";
+	char *dlim = " ";
 	char *shell_token;
 
-	token_command = "This is a Simple Shell Project, and it feels good working with my partner";
 	shell_token = strtok(token_command, dlim);
 	while (shell_token != NULL)
 	{
@@ -18,4 +18,4 @@ int main(void)
 		shell_token = strtok(NULL, dlim);
 	}
 	return (0);
-}	
+}

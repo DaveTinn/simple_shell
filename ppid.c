@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+
 /**
  * main - PID
  *
@@ -7,9 +8,9 @@
  */
 int main(void)
 {
-	pid_t my_PID;
+	pid_t my_parentPID;
 
-	my_PID = getpid();
-	printf("%u\n", my_PID);
+	my_parentPID = getppid();
+	printf("%u\n", my_parentPID);
 	return (0);
 }
