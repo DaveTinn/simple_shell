@@ -5,17 +5,18 @@
  *
  * Return: 0 Always
  */
-int main(void)
+int shell_tokenizer(char *shell_cmd, char args[])
 {
-	char token_command[] = "This is a token in Simple Shell Project";
 	char *dlim = " ";
 	char *shell_token;
+	int tally = 0;
 
 	shell_token = strtok(token_command, dlim);
 	while (shell_token != NULL)
 	{
-		printf("%s\n", shell_token);
+		agrs[tally++] = shell_token;
 		shell_token = strtok(NULL, dlim);
 	}
-	return (0);
+	args[tally] = NULL;
+	return (tally);
 }

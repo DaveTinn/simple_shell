@@ -5,11 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdbool.h>
+#include <sys/types.h>
 #include <sys/wait.h>
 
-void show_our_prompt(void);
-void retrv_user_input(char* inp_comm, size_t size);
-void inv_sh_commnd(const char *sh_command);
-void our_printf(const char *prompt_msg);
+int show_ourPrompt(void);
+char *rm_newline(char *str, int length);
+int shell_tokenizer(char *shell_cmd, char args[]);
+int perform_commd(char *args[]);
 #endif
