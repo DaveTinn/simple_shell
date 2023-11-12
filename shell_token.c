@@ -1,22 +1,12 @@
 #include "simpleshell.h"
-#include <stdio.h>
-/**
- * main - function to check the code
- *
- * Return: 0 Always
- */
-int shell_tokenizer(char *shell_cmd, char args[])
+void shell_tokenizer(char *shell_inp, char **argmts)
 {
-	char *dlim = " ";
-	char *shell_token;
 	int tally = 0;
+	char *shell_token = strtok(shell_inp, " ");
 
-	shell_token = strtok(token_command, dlim);
-	while (shell_token != NULL)
-	{
-		agrs[tally++] = shell_token;
-		shell_token = strtok(NULL, dlim);
+	while (shell_token != NULL) {
+		argmts[tally++] = shell_token;
+		shell_token = strtok(NULL, " ");
 	}
-	args[tally] = NULL;
-	return (tally);
+	argmts[tally] = NULL;
 }

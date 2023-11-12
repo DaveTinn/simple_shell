@@ -1,9 +1,8 @@
 #include "simpleshell.h"
-char *rm_newline(char *str, int length)
+void rm_newline(char *str, size_t length)
 {
-	if (str > 0 && str[length - 1] == '\n')
+	if (length > 0 && str[length - 1] == '\n')
 	{
-		str[length -1] = '\n';
+		str[length -1] = '\0';
 	}
-	return (str);
 }
