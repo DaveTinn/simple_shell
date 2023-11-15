@@ -1,6 +1,10 @@
 #include "simpleshell.h"
+/**
+ * show_ourPrompt - furnction to display prompt
+ *
+ * Return: Nothing
+ */
 void show_ourPrompt(void)
 {
-	printf("#daveafo$ ");
-	fflush(stdout);
+	write(STDOUT_FILENO, "#daveafo$", 15);
 }

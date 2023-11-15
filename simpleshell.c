@@ -1,5 +1,10 @@
 #include "simpleshell.h"
 #include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: 0
+ */
 int main()
 {
 	char user_inp[MAX_INPUT_SIZE];
@@ -18,21 +23,25 @@ int main()
 		rm_newline(user_inp, strlen(user_inp));
 		if (strcmp(user_inp, "exit") == 0)
 		{
-			printf("Quitting the Shell Program\n");
+			write(STDOUT_FILENO, "Quitting the Shell Program\n", 30);
 			break;
 		}
 		shell_tokenizer(user_inp, arguments);
-		if (strcmp(arguments[0], "cd") == 0)
+		if (arguments[0] == NULL)
+		{
+			continue;
+		}
+		if (strcmp(arguments[0], "ls") == 0)
 		{
 			if (arguments[1] == NULL)
 			{
-				fprintf(stderr, "cd: missing argument\n");
+				write(STDERR_FILENO, "ls: argument not found\n", 25);
 			}
 			else
 			{
 				if (chdir(arguments[1]) != 0)
 				{
-					perror("/bin/ls");
+					perror("ls");
 				}
 			}
 			continue;
