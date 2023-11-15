@@ -1,6 +1,13 @@
 #include "simpleshell.h"
 #include <stdio.h>
-int main()
+
+/**
+ * main - entry point of the shell program
+ *
+ * Return: 0 on success
+ */
+
+int main(void)
 {
 	char user_inp[MAX_INPUT_SIZE];
 	pid_t our_pid;
