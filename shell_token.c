@@ -14,9 +14,10 @@
  */
 void shell_tokenizer(char *shell_inp, char **argmts)
 {
-	int tally = 0;
+	int tally;
 	char *shell_token = strtok(shell_inp, " ");
 
+	tally = 0;
 	while (shell_token != NULL)
 	{
 		argmts[tally++] = shell_token;

@@ -9,6 +9,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 void show_ourPrompt(void);
 void shell_tokenizer(char *shell_inp, char **argmts);

@@ -9,5 +9,8 @@
  */
 void show_ourPrompt(void)
 {
-	write(STDOUT_FILENO, "#daveafo$", 15);
+	char *ourPrompt;
+
+	ourPrompt = "#daveafo$ ";
+	write(STDOUT_FILENO, ourPrompt, strlen(ourPrompt));
 }
