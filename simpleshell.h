@@ -14,6 +14,7 @@
 
 void show_ourPrompt(void);
 void shell_tokenizer(char *shell_inp, char **argmts);
-void perform_commd(char **cmd_argmts);
+void handling_ls_command(char **cmd_argmts);
 void rm_newline(char *str, size_t length);
+void perform_command(char *commnd, char **argmts, char **env);
 #endif
